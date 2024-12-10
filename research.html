@@ -160,6 +160,11 @@
                 abstractDiv.style.display = "none";
             }
         }
+         document.querySelectorAll('a[href="#"]').forEach(link => {
+        link.addEventListener('click', event => {
+            event.preventDefault(); // Prevent default action
+        });
+    });
     </script>
 </body>
 </html>
