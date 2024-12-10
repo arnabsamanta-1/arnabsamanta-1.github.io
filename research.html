@@ -10,7 +10,6 @@
             margin: 0;
             padding: 0;
         }
-    
         header {
             display: flex;
             justify-content: space-between;
@@ -80,6 +79,12 @@
         .research-item .link a:hover {
             background-color: #444444;
         }
+        .abstract {
+            display: none;
+            margin-top: 10px;
+            border-left: 3px solid #1e90ff;
+            padding-left: 10px;
+        }
     </style>
 </head>
 <body>
@@ -99,37 +104,62 @@
             For code or data requests, don’t hesitate to get in touch.
         </p>
         <p>
-        email: <strong>arnob.shamanta62@gmail.com</strong>.
+            email: <strong>arnob.shamanta62@gmail.com</strong>.
         </p>
-        <div class="research-item">
-            <div class="title">DHSr R package</div>
-            <div class="year">Year: 2024</div>
-            <div class="link">
-                <a href="#">ABSTRACT</a>
-                <a href="#">PDF</a>
-                <a href="#">CODE</a>
+        <section class="research-items">
+            <div class="research-item">
+                <div class="title">DHSr R package</div>
+                <div class="year">Year: 2024</div>
+                <div class="link">
+                    <a href="#">ABSTRACT</a>
+                    <a href="#">PDF</a>
+                    <a href="#">CODE</a>
+                </div>
             </div>
-        </div>
-    <div class="research-item">
-    <div class="title">Community Effect on Educational Participation in Contemporary India: A District Level Analysis</div>
-    <div class="year">Year: Working Paper</div>
-    <div class="link">
-        <a href="Contemporary%20Indian%20Community%20Effect.pdf" target="_blank">PDF</a>
-        <a href="#" target="_blank">Abstract</a>
-        <a href="#" target="_blank">Code</a>
-        <a href="#" target="_blank">Updates</a>
-    </div>
-    </div>
-
-        <div class="research-item">
-            <div class="title">Multidimensional Poverty Analysis: Assessing Poverty Patterns Among Different Demographic Groups of India</div>
-            <div class="year">Year: 2022</div>
-            <div class="year">Journal: Journal of Progressive Research in Social Sciences</div>
-            <div class="link">
-                <a href="https://scitecresearch.com/journals/index.php/jprss/article/view/2214" target="_blank">JOURNAL LINK</a>
-                <a href="#">PDF</a>
+            <div class="research-item">
+                <div class="title">Community Effect on Educational Participation in Contemporary India: A District Level Analysis</div>
+                <div class="year">Year: Working Paper</div>
+                <div class="link">
+                    <a href="#" onclick="toggleAbstract(event)">Abstract</a>
+                    <a href="Contemporary%20Indian%20Community%20Effect.pdf" target="_blank">PDF</a>
+                    <a href="#" target="_blank">Code</a>
+                    <a href="#" target="_blank">Updates</a>
+                </div>
+                <div class="abstract">
+                    Existing studies on community, gender effects, and educational disparities in India have largely relied on 
+                    state-level analyses of administrative data, often using fixed effects and universal community effect 
+                    assumptions (common slopes) for caste-religion-related disparities. While these approaches offer valuable 
+                    insights, they obscure critical intra-state heterogeneity, introduce bias, and reduce statistical power to 
+                    detect local variation. This study addresses these challenges by incorporating district-level regressions 
+                    and Bayesian posterior adjustments, capturing localized community effects that state-level analyses fail 
+                    to identify. The findings are supported by prior village-level RCTs and suggest that wealth determinants, 
+                    often emphasized as superseding community effects, may themselves be endogenous. Markov steady-state 
+                    wealth transition probabilities further reveal caste-based disparities, underscoring the need for deeper 
+                    exploration. By integrating spatial dimensions and advanced methodologies, this study provides a 
+                    comprehensive framework for understanding educational inequalities in contemporary India.
+                </div>   
             </div>
-        </div>
+            <div class="research-item">
+                <div class="title">Multidimensional Poverty Analysis: Assessing Poverty Patterns Among Different Demographic Groups of India</div>
+                <div class="year">Year: 2022</div>
+                <div class="year">Journal: Journal of Progressive Research in Social Sciences</div>
+                <div class="link">
+                    <a href="https://scitecresearch.com/journals/index.php/jprss/article/view/2214" target="_blank">JOURNAL LINK</a>
+                    <a href="#">PDF</a>
+                </div>
+            </div>
+        </section>
     </main>
+    <script>
+        function toggleAbstract(event) {
+            event.preventDefault(); // Prevent default link behavior
+            const abstractDiv = event.target.parentElement.nextElementSibling;
+            if (abstractDiv.style.display === "none" || abstractDiv.style.display === "") {
+                abstractDiv.style.display = "block";
+            } else {
+                abstractDiv.style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
