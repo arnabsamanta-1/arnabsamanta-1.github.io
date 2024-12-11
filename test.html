@@ -653,8 +653,8 @@ us_states_listw &lt;- DHSr::listw(
   loc_data = &quot;GEOID&quot;, 
   weight_function = function(d) exp(-d / 0.2) # any decaying function of distance 
 )</code></pre>
-<pre><code>## Reading layer `file45c428bc6ee8&#39; from data source 
-##   `C:\Users\91911\AppData\Local\Temp\RtmpMZDCPr\file45c428bc6ee8.shp&#39; 
+<pre><code>## Reading layer `filef9c7d976f50&#39; from data source 
+##   `C:\Users\91911\AppData\Local\Temp\RtmpG24RKV\filef9c7d976f50.shp&#39; 
 ##   using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 49 features and 6 fields
 ## Geometry type: MULTIPOLYGON
@@ -709,11 +709,17 @@ print(cluster_map_result$plot)</code></pre>
 </div>
 </div>
 </div>
-<div id="in-summary-we-ran-51-regressions-cleaned-and-stored-the-results-so-that-it-is-compatible-for-visualizations-and-produced-a-spatial-cluster-map." class="section level1">
-<h1>In Summary : We ran 51 regressions, cleaned and stored the results
-so that it is compatible for visualizations and produced a spatial
-cluster map.</h1>
-<p>(and the whole code was was about actually 12 lines : ) )</p>
+<div id="in-summary-we-conducted-51-regressions-processed-and-organized-the-results-for-seamless-visualization-and-created-a-spatial-cluster-map." class="section level1">
+<h1>In summary, we conducted 51 regressions, processed and organized the
+results for seamless visualization, and created a spatial cluster
+map.</h1>
+<p>(and the entire piece was just about 12 lines of code! : ) )</p>
+<p><strong>Please Note:</strong> We kept the model straightforward by
+not including any interaction or any random effect. However, these can
+easily be incorporated by using the other repeated regression functions
+(<code>Replmre2</code> for random effect and <code>Repglmre2</code> for
+generalized models.) We’ll explore additional functionalities in the
+future—stay tuned!</p>
 </div>
 
 
