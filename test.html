@@ -357,11 +357,13 @@ display: none;
 </div>
 
 
-<div id="introduction---dhsr" class="section level1">
-<h1>Introduction - DHSr</h1>
+<div id="introduction---dhsr-example-workflow" class="section level1">
+<h1>Introduction - DHSr Example Workflow</h1>
 <div id="this-is-an-example-workflow-for-using-the-r-package-dhsr.-the-primary-usefulness-of-this-r-package-lies-in" class="section level2">
 <h2>This is an example workflow for using the R package DHSr. The
 primary usefulness of this R package lies in:</h2>
+<p>( for the detailed documentation please refer to <a href="https://www.rdocumentation.org/packages/DHSr/versions/0.1.0">CRAN
+rdocumentation</a>.)</p>
 <ol style="list-style-type: decimal">
 <li><p><strong>Performing repeated regressions ( it can perform OLS,
 logit, probit and other glms - fixed effect as well as mixed
@@ -411,13 +413,16 @@ a specified variable and creates sign combination variables to identify
 high-high or low-low clusters. ( see Anselin 1995 for theory)</p>
 <p><strong>Please note</strong>: You will need a properly formatted
 spatial dataset (e.g., shapefile or <code>sf</code> object).</p>
-<p><strong>Installing</strong> : for the time being I am installing from
-my local system. (in case CRAN delays much we may publish on GitHub as
-well)</p>
-<pre class="r"><code>install.packages(&quot;C:/Users/91911/Documents/DHSr_0.1.0.tar.gz&quot;, repos = NULL, type = &quot;source&quot;)</code></pre>
-<pre><code>## Installing package into &#39;C:/Users/91911/AppData/Local/R/win-library/4.3&#39;
-## (as &#39;lib&#39; is unspecified)</code></pre>
-<pre class="r"><code>library(DHSr)</code></pre>
+<p><strong>Installing</strong> : The package is currently available only
+for Windows. It was accepted and published by CRAN on
+<strong>10-JAN-2025.</strong></p>
+<pre class="r"><code>if (!requireNamespace(&quot;DHSr&quot;, quietly = TRUE)) {
+  install.packages(&quot;DHSr&quot;)
+}
+
+# Load the package
+library(DHSr)</code></pre>
+<pre><code>## Warning: package &#39;DHSr&#39; was built under R version 4.3.3</code></pre>
 <pre><code>## DHSr package loaded with all dependencies.</code></pre>
 </div>
 </div>
@@ -653,8 +658,8 @@ us_states_listw &lt;- DHSr::listw(
   loc_data = &quot;GEOID&quot;, 
   weight_function = function(d) exp(-d / 0.2) # any decaying function of distance 
 )</code></pre>
-<pre><code>## Reading layer `filef785f292f81&#39; from data source 
-##   `C:\Users\91911\AppData\Local\Temp\RtmpOKm7sb\filef785f292f81.shp&#39; 
+<pre><code>## Reading layer `file5a947c105bcd&#39; from data source 
+##   `C:\Users\91911\AppData\Local\Temp\RtmpeWAREQ\file5a947c105bcd.shp&#39; 
 ##   using driver `ESRI Shapefile&#39;
 ## Simple feature collection with 49 features and 6 fields
 ## Geometry type: MULTIPOLYGON
