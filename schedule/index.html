@@ -71,7 +71,7 @@
                 <a href="../CV_git.pdf">CV</a>
                 <a href="../research.html">Research</a>
                 <a href="https://meeting-scheduler-arnab.arnob-shamanta62.chatgpt.site/?embed=1" target="scheduler-panel" aria-current="page">Schedule a meeting</a>
-                <a href="https://meeting-scheduler-arnab.arnob-shamanta62.chatgpt.site/host" target="scheduler-panel">Host access</a>
+                <a href="https://meeting-scheduler-arnab.arnob-shamanta62.chatgpt.site/host?embed=1" target="scheduler-panel">Host access</a>
             </nav>
         </aside>
         <main>
@@ -84,5 +84,19 @@
             ></iframe>
         </main>
     </div>
+    <script>
+        const scheduler = document.querySelector('iframe[name="scheduler-panel"]');
+        const schedulerOrigin = new URL(scheduler.src).origin;
+        window.addEventListener('message', (event) => {
+            if (event.origin !== schedulerOrigin || event.source !== scheduler.contentWindow ||
+                event.data?.type !== 'arnab-scheduler-host-auth') return;
+            const action = event.data.action;
+            if (action !== 'sign-in' && action !== 'switch') return;
+            const path = action === 'switch' ? '/signout-with-chatgpt' : '/signin-with-chatgpt';
+            const url = new URL(path, schedulerOrigin);
+            url.searchParams.set('return_to', '/host');
+            window.location.assign(url.href);
+        });
+    </script>
 </body>
 </html>
