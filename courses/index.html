@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Courses | Arnab Samanta</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; background: #fafafa; color: #26282c; font: 16px/1.6 Arial, sans-serif; }
+    .layout { display: grid; grid-template-columns: 12rem minmax(0, 1fr); min-height: 100vh; }
+    aside { padding: 1.4rem 1rem; background: #2e2e2e; color: #fff; }
+    a { color: inherit; }
+    .name { display: block; font-weight: 700; margin: .5rem .6rem 1.4rem; text-decoration: none; }
+    nav { display: grid; gap: .3rem; }
+    nav a { padding: .45rem .6rem; text-decoration: none; border-radius: .35rem; }
+    nav a:hover, nav [aria-current="page"] { background: #494949; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 4px; }
+    main { width: min(100%, 980px); padding: clamp(24px, 5vw, 65px); }
+    h1 { font-size: clamp(30px, 4vw, 45px); line-height: 1.15; letter-spacing: -.035em; margin: 0 0 15px; }
+    main > p { color: #5d6269; margin-bottom: 30px; }
+    .course { display: block; padding: clamp(22px, 4vw, 36px); background: #fff; border: 1px solid #dedfe1; border-radius: 12px; text-decoration: none; }
+    .course:hover { border-color: #676e78; }
+    h2 { font-size: 24px; margin: 0 0 8px; }
+    .course p { margin: 0 0 16px; color: #555c65; max-width: 600px; }
+    .course span { font-size: 14px; font-weight: 700; }
+    @media(max-width:620px) {
+      .layout { display: block; }
+      aside { padding: .6rem; }
+      .name { margin: .3rem .6rem; }
+      nav { display: flex; flex-wrap: wrap; font-size: 14px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside>
+      <a class="name" href="../">Arnab Samanta</a>
+      <nav aria-label="Site navigation">
+        <a href="../">Home</a>
+        <a href="../CV_git.pdf">CV</a>
+        <a href="../research.html">Research</a>
+        <a href="./" aria-current="page">Courses</a>
+        <a href="../schedule/">Schedule a meeting</a>
+      </nav>
+    </aside>
+    <main>
+      <h1>Courses</h1>
+      <p>Practice and reference materials for economics students.</p>
+      <a class="course" href="ug/">
+        <h2>UG level</h2>
+        <p>Mathematics for economics. A 30-day challenge with mixed algebra, coordinate geometry, logarithms and calculus, plus worked examples.</p>
+        <span>30 easy · 15 medium · 15 advanced questions per day</span>
+      </a>
+    </main>
+  </div>
+</body>
+</html>
